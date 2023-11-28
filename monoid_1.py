@@ -23,7 +23,7 @@ class Monoid:
     def check_monoid_multiplication(self):
         """
         Проверяет все возможные перемножения в множестве, дабы убедиться
-        что они не выходят за само множество сложность O(n^2)
+        что они не выходят за само множество сложность O(n^3)
         :return: Ошибку или True
         """
         # Умножение двух элементов остается частью множества
@@ -41,7 +41,6 @@ class Monoid:
                     result_2 = self.__mult_function(i, self.__mult_function(j, k))  # i * (j * k)
                     if result_1 != result_2:
                         raise Exception('[!] Бинарная операция не является ассоциативной!')
-
         return True
 
     def find_zero_element(self):
